@@ -29,7 +29,7 @@ public class Vector {
         return z;
     }
 
-    //now some basic math for the vectors:
+    //now some basic math for the vectors that is super important later:
 
     public Vector add(Vector other) {
         return new Vector(this.x + other.x, this.y + other.y, this.z + other.z);
@@ -39,8 +39,8 @@ public class Vector {
         return new Vector(this.x - other.x, this.y - other.y, this.z - other.z);
     }
 
-    public Vector multiply(Vector other) {
-        return new Vector(this.x * other.x, this.y * other.y, this.z * other.z);
+    public Vector multiply(double scalar) {
+        return new Vector(this.x * scalar, this.y * scalar, this.z * scalar);
     }
 
     //the length (or magnitude) of a vector: |vec|
