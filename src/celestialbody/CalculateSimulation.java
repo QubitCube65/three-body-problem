@@ -56,9 +56,9 @@ public class CalculateSimulation {
         }
     }
 
-    private void renewPositions() {
+    private void renewPositions() {  //based on velocity and time steps
 
-        for (Orb orb : celestialObjects) {
+        for (Orb orb : celestialObjects) { //go over all celestial objects
             orb.setPosition(orb.getPosition().add(orb.getVelocity().multiply(timeStep)));
         }
     }
