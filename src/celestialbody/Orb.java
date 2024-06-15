@@ -40,5 +40,5 @@ public class Orb {
         this.velocity = velocity;
     }
 
-    // no setter for mass because we assume it stays the same
+    //no setter for mass because we assume it stays the same
 }
