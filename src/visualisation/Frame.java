@@ -1,6 +1,7 @@
 package visualisation;
 
-import javax.swing.JFrame;    //i never used this so my code might be weird
+//i never worked with this stuff
+import javax.swing.JFrame;   //https://www.java-tutorial.org/jpanel.html - this old website is my main source
 
 public class Frame extends JFrame {
 
@@ -11,5 +12,4 @@ public class Frame extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //ends all running processes if you close the window
 
     }
-
 }
