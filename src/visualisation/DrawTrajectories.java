@@ -23,7 +23,7 @@ public class DrawTrajectories extends JPanel{
         for (Orb orb : celestialObjects) {
             int x = (int) orb.getPosition().getX();
             int y = (int) orb.getPosition().getY();
-            g.fillOval(x,y,5,5);
+            g.fillOval(x,y,5,5);        //draws oval of size 5 at position xy
         }
     }
 
