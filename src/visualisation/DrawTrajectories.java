@@ -7,11 +7,11 @@ import javax.swing.JPanel;
 import java.awt.Graphics;
 
 
-public class DrawTrajectories {
+public class DrawTrajectories extends JPanel{
 
     private List<Orb> celestialObjects;
 
-    public DrawTrajectories() {
+    public DrawTrajectories(List<Orb> celestialObjects) {
         this.celestialObjects = celestialObjects;
     }
 
