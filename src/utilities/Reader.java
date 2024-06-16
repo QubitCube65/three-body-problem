@@ -29,6 +29,6 @@ public class Reader {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return celestialObjects;
+        return celestialObjects; //returns the list with the read in celestial objects
     }
 }
