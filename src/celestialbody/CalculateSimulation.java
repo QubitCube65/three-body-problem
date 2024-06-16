@@ -13,6 +13,10 @@ public class CalculateSimulation {
         this.timeStep = timeStep;
     }
 
+    public List<Orb> getCelestialObjects() {
+        return celestialObjects;
+    }
+
     //the simulation of the whole thing sounds more tragic than it is:
 
     public void simulationProcess (double totalTime) {
@@ -62,5 +66,4 @@ public class CalculateSimulation {
             orb.setPosition(orb.getPosition().add(orb.getVelocity().multiply(timeStep)));
         }
     }
-
 }

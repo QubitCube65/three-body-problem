@@ -27,7 +27,7 @@ public class DrawTrajectories extends JPanel{
         }
     }
 
-    public void renewOrbs(Orb orb) {
+    public void renewOrbs(List<Orb> orb) {
         this.celestialObjects = celestialObjects;
         repaint();
     }
