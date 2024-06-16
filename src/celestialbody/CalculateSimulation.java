@@ -33,6 +33,8 @@ public class CalculateSimulation {
 
     private void calculateForces() {
 
+        double G = 6.67430e-11;
+
         for(int i = 0; i < celestialObjects.size(); i++) {  //goes over the List of all celestial objects
 
             Orb orbA = celestialObjects.get(i);   //we take the i-th object
@@ -47,11 +49,10 @@ public class CalculateSimulation {
                 Orb orbB = celestialObjects.get(j); //take j-th object
                 Vector delta = orbB.getPosition().subtract(orbA.getPosition()); //calculate distance between the vectors
                 double distance = delta.magnitude(); //calculate distance between the actual celestial objects
-                double gForce = (orbA.getMass() * orbB.getMass()) / (distance * distance); //check README for Newtons
+                double gForce = (G * orbA.getMass() * orbB.getMass()) / (distance * distance); //check README for Newtons
                                                                                            //gravity formula (m1*m2/r^2)
                 force = force.add(delta.normalize().multiply(gForce)); //calculate resulting force and add it to the
                                                                        //force of orbA
-                                                                       //i didn't include G for simplification
                 }
             }
             Vector acceleration = force.multiply(1 / orbA.getMass()); //calculate acceleration of orbA

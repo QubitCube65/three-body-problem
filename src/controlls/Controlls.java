@@ -21,7 +21,7 @@ public class Controlls {
         this.timer = new Timer(50, new ActionListener() { //every 50 milliseconds do this action
             @Override
             public void actionPerformed(ActionEvent e) {
-                calculateSimulation.simulationProcess(0.05);  //simulation goes for a 0.05 step forward
+                calculateSimulation.simulationProcess(0.5);  //simulation goes for a 0.05 step forward
                 drawTrajectories.renewOrbs(calculateSimulation.getCelestialObjects());
             }
         });

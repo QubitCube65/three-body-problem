@@ -17,7 +17,7 @@ public class Main {
 
         //get the input data
 
-        List<Orb> celestialObjects = Reader.readCelestialObjects("input.txt");
+        List<Orb> celestialObjects = Reader.readCelestialObjects("src/input.txt");
         double timestep = 0.01;  //eg.
         double totalTime = 100; //eg.
 
@@ -37,7 +37,5 @@ public class Main {
         Timer timer = new Timer(1000, null);
         Controlls controlls = new Controlls(calculateSimulation, drawTrajectories, timer);
         controlls.beginSimulation();
-
-
     }
 }
