@@ -33,7 +33,7 @@ public class CalculateSimulation {
 
     private void calculateForces() {
 
-        double G = 6.67430e-11;
+        double G = 6.67430e-11; //gravitation constant
 
         for(int i = 0; i < celestialObjects.size(); i++) {  //goes over the List of all celestial objects
 
@@ -53,6 +53,7 @@ public class CalculateSimulation {
                                                                                            //gravity formula (m1*m2/r^2)
                 force = force.add(delta.normalize().multiply(gForce)); //calculate resulting force and add it to the
                                                                        //force of orbA
+                    System.out.println("Force magnitude: " + gForce + ", Distance: " + distance);
                 }
             }
             Vector acceleration = force.multiply(1 / orbA.getMass()); //calculate acceleration of orbA
