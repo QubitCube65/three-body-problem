@@ -40,16 +40,16 @@ public class DrawTrajectories extends JPanel{
 
         g.setColor(Color.DARK_GRAY);
         for(Vector position : trajectories.get(i)) {
-            int x = (int) (position.getX() * scaleFactor + getWidth() / 2);
-            int y = (int) (position.getY() * scaleFactor + getHeight() / 2);
+            int x = (int) (position.getX() * scaleFactor + getWidth() / 2.0);
+            int y = (int) (position.getY() * scaleFactor + getHeight() / 2.0);
             g.fillOval(x,y,2,2); //draws oval of size 2 at position xy
         }
 
         //draw the celestial objects
 
         g.setColor(Color.MAGENTA);
-        int x = (int) (orb.getPosition().getX() * scaleFactor + getWidth() / 2);
-        int y = (int) (orb.getPosition().getY() * scaleFactor + getHeight() / 2);
+        int x = (int) (orb.getPosition().getX() * scaleFactor + getWidth() / 2.0);
+        int y = (int) (orb.getPosition().getY() * scaleFactor + getHeight() / 2.0);
         g.fillOval(x,y,7,7);        //draws oval of size 5 at position xy
 
     }
