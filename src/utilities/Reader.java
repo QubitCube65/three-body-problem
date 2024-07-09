@@ -18,7 +18,7 @@ public class Reader {
 
         try(BufferedReader bufferedReader = Files.newBufferedReader(Paths.get(filename))) { //BufferedReader reads all lines
             String line;
-            while ((line = bufferedReader.readLine()) != null && celestialObjects.size() < 3) { //because its the three-body-problem.
+            while ((line = bufferedReader.readLine()) != null && celestialObjects.size() < 3) { //because its the three-body-problem
                 String[] parts = line.split(",");
 
                 double mass = Double.parseDouble(parts[0]);

@@ -12,7 +12,9 @@ public class Frame extends JFrame {
 
     private DrawTrajectories drawTrajectories;
 
-    public Frame() {
+    public Frame(DrawTrajectories drawTrajectories) {
+
+        this.drawTrajectories = drawTrajectories;
 
         setTitle("Three body problem simulation:"); //title
         setSize(800,800); //size of the "canvas"
@@ -20,7 +22,7 @@ public class Frame extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //ends all running processes if you close the window
         setVisible(true);
 
-        drawTrajectories = new DrawTrajectories(new ArrayList<>());
+        //drawTrajectories = new DrawTrajectories(new ArrayList<>());
 
         JButton zoomInButton = new JButton("+");
         zoomInButton.setPreferredSize(new Dimension(40, 20));

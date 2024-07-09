@@ -28,7 +28,7 @@ public class Main {
         //graphics
 
         DrawTrajectories drawTrajectories = new DrawTrajectories(celestialObjects);
-        Frame frame = new Frame();
+        Frame frame = new Frame(drawTrajectories);
         frame.add(drawTrajectories);
         frame.setVisible(true);
 
