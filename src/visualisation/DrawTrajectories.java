@@ -8,20 +8,36 @@ import java.util.ArrayList;
 import javax.swing.JPanel;
 import java.awt.Graphics;
 import java.awt.Color;
+import java.util.Random;
+import java.util.Map;
+import java.util.HashMap;
 
 
 public class DrawTrajectories extends JPanel{
 
     private List<Orb> celestialObjects;
     private List<List<Vector>> trajectories;  //list of list to save orbs structures
+    private double scaleFactor = 1.4;
+    private Map<Orb, Color> orbColors; //
 
     public DrawTrajectories(List<Orb> celestialObjects) {
 
         this.celestialObjects = celestialObjects;
         this.trajectories = new ArrayList<>();
-        for (int i = 0;i < celestialObjects.size(); i++) {
+        this.orbColors = new HashMap<>();
+
+        Random rand = new Random();
+
+        //always the same color is boring, and we also don't want to waste time choosing them
+        for(Orb orb : celestialObjects) {
+            float r = rand.nextFloat();
+            float g = rand.nextFloat();
+            float b = rand.nextFloat();
+            orbColors.put(orb, new Color(r,g,b));
             trajectories.add(new ArrayList<>());
         }
+        setBackground(Color.BLACK);
+        setOpaque(false);
     }
 
     @Override
@@ -29,7 +45,7 @@ public class DrawTrajectories extends JPanel{
                                                 //https://stackoverflow.com/questions/15544549/how-does-paintcomponent-work
         super.paintComponent(g);
 
-        double scaleFactor = 0.7;
+        //double scaleFactor = 1.4;
 
         for(int i = 0; i < celestialObjects.size(); i++) {
             Orb orb = celestialObjects.get(i);
@@ -38,7 +54,7 @@ public class DrawTrajectories extends JPanel{
 
         //draw the trajectories
 
-        g.setColor(Color.DARK_GRAY);
+        g.setColor(Color.WHITE);
         for(Vector position : trajectories.get(i)) {
             int x = (int) (position.getX() * scaleFactor + getWidth() / 2.0);
             int y = (int) (position.getY() * scaleFactor + getHeight() / 2.0);
@@ -46,13 +62,21 @@ public class DrawTrajectories extends JPanel{
         }
 
         //draw the celestial objects
-
-        g.setColor(Color.MAGENTA);
+        Color orbColor = orbColors.get(orb);
+        g.setColor(orbColor);
         int x = (int) (orb.getPosition().getX() * scaleFactor + getWidth() / 2.0);
         int y = (int) (orb.getPosition().getY() * scaleFactor + getHeight() / 2.0);
         g.fillOval(x,y,7,7);        //draws oval of size 5 at position xy
 
     }
+    }
+
+    public double getScaleFactor() {
+        return scaleFactor;
+    }
+
+    public void setScaleFactor (double scaleFactor) {
+        this.scaleFactor = scaleFactor;
     }
 
     public void renewOrbs(List<Orb> orb) {
