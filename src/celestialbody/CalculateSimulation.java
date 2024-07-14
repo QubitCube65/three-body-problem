@@ -2,6 +2,10 @@ package celestialbody;
 
 import java.util.List;
 
+/**
+ * In this class you can find all the math and physics that let the planets fly through the universe.
+ */
+
 public class CalculateSimulation {
 
     private List<Orb> celestialObjects;

@@ -12,6 +12,10 @@ import java.util.Random;
 import java.util.Map;
 import java.util.HashMap;
 
+/**
+ * This class is determining how the drawn objects look like.
+ */
+
 
 public class DrawTrajectories extends JPanel{
 
@@ -45,8 +49,6 @@ public class DrawTrajectories extends JPanel{
                                                 //https://stackoverflow.com/questions/15544549/how-does-paintcomponent-work
         super.paintComponent(g);
 
-        //double scaleFactor = 1.4;
-
         for(int i = 0; i < celestialObjects.size(); i++) {
             Orb orb = celestialObjects.get(i);
             trajectories.get(i).add(orb.getPosition());
@@ -62,6 +64,7 @@ public class DrawTrajectories extends JPanel{
         }
 
         //draw the celestial objects
+
         Color orbColor = orbColors.get(orb);
         g.setColor(orbColor);
         int x = (int) (orb.getPosition().getX() * scaleFactor + getWidth() / 2.0);

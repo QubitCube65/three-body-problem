@@ -10,6 +10,11 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
+/**
+ * This reader-class reads the information of the  input file
+ * and returns the list of celestial object used by other classes.
+ */
+
 public class Reader {
 
     public static List<Orb> readCelestialObjects (String filename) {   //read celestial objects from a file

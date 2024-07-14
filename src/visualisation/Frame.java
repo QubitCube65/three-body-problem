@@ -7,6 +7,10 @@ import java.awt.BorderLayout;
 import java.awt.*;
 import java.util.ArrayList;
 
+/***
+ * This class represents the frame/window in which the simulation
+ * is visible with all its parameters.
+ */
 
 public class Frame extends JFrame {
 
@@ -22,21 +26,19 @@ public class Frame extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //ends all running processes if you close the window
         setVisible(true);
 
-        //drawTrajectories = new DrawTrajectories(new ArrayList<>());
+        //buttons for zooming in and out of the simulation:
 
         JButton zoomInButton = new JButton("+");
         zoomInButton.setPreferredSize(new Dimension(40, 20));
         zoomInButton.addActionListener(e -> {
             drawTrajectories.setScaleFactor(drawTrajectories.getScaleFactor() * 1.1);
-            drawTrajectories.repaint();
-        });
+            drawTrajectories.repaint();});
 
         JButton zoomOutButton = new JButton("-");
         zoomOutButton.setPreferredSize(new Dimension(40, 20));
         zoomOutButton.addActionListener(e -> {
             drawTrajectories.setScaleFactor(drawTrajectories.getScaleFactor() / 1.1);
-            drawTrajectories.repaint();
-        });
+            drawTrajectories.repaint();});
 
         getContentPane().add(drawTrajectories, BorderLayout.CENTER);
         getContentPane().add(zoomInButton, BorderLayout.NORTH);
